@@ -3,141 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>God Blessing Family - Contact Us</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
+    <title>God Blessing Family - Free Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Import Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        /* General Styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: url('https://drive.google.com/uc?export=view&id=1Gww4hjBpjxfvrRhiCpNjEuJ2HbA2t3in') no-repeat center center/cover;
+            background: url('background.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Overlay to make text readable */
-        .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Form Container */
-        .container {
-            position: relative;
-            background: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            width: 400px;
-            z-index: 1;
         }
-
-        h2 {
-            color: #333;
-            font-weight: 600;
+        .container {
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
         }
-
-        p {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 15px;
+        .flyer-img {
+            width: 80%; max-width: 400px; height: auto; max-height: 650px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
         }
-
-        /* Form Input Fields */
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
         button {
-            width: 100%;
-            padding: 10px;
-            background: #28a745;
-            color: white;
+            background: #007bff;
             border: none;
-            border-radius: 5px;
             font-size: 16px;
-            cursor: pointer;
+            padding: 8px;
+            font-weight: bold;
+            padding: 12px;
             transition: 0.3s;
         }
-
         button:hover {
-            background: #218838;
+            background: #0056b3;
         }
-
-        /* Footer Text */
-        .footer-text {
-            font-size: 14px;
-            color: #444;
-            margin-top: 15px;
-            font-weight: bold;
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
-
     </style>
-
-    <script>
-        (function() {
-            emailjs.init("wO6WtA9SyI-i2b-gX"); // Replace with your EmailJS User ID
-        })();
-
-        function sendEmail(event) {
-            event.preventDefault();
-
-            // Collect form data
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const tel = document.getElementById("tel").value;
-
-            const params = { name, email, tel };
-
-            emailjs.send("service_erejbns", "template_g7ddg3r", params)
-                .then(response => {
-                    alert("✅ Email sent successfully!");
-                    document.getElementById("contactForm").reset();
-                })
-                .catch(error => {
-                    alert("❌ Error sending email. Try again later.");
-                    console.error("EmailJS Error:", error);
-                });
-        }
-    </script>
 </head>
 <body>
-
-    <div class="overlay"></div> <!-- Dark overlay for better readability -->
-
-    <div class="container">
-        <h2>Welcome to God Blessing Family</h2>
-        <p>We offer free services to our migrant and refugee brothers and sisters on the last Saturday of each month from 10 AM to 2 PM.</p>
-        <p>We provide household items, furniture, kitchenware, accessories, and new clothes. Baby essentials are also available.</p>
-        <p>On the last Saturday of April, a specialist will assist with health matters and health insurance.</p>
-        <p>Lunch will be provided. Come and bring others with you!</p>
-        <p>God loves you and your family. 💖</p>
-
-        <form id="contactForm" onsubmit="sendEmail(event)">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <input type="tel" id="tel" name="tel" placeholder="Your Phone Number" required>
-            <button type="submit">Send</button>
+    <div class="container text-center">
+        <h2 class="text-primary">Welcome to God Blessing Family</h2>
+        <p class="text-muted">We offer free services to our migrant and refugee brothers and sisters on the last Saturday of each month from 10 AM to 2 PM.</p>
+        <img src="https://raw.githubusercontent.com/StevenHany0/god-blessing-contact-form/main/1.jpg" alt="Church Flyer" class="flyer-img">
+        <div class="card">
+            <h4 class="text-success">What We Provide:</h4>
+            <ul class="list-unstyled" style="list-style: none; padding-left: 0;">
+                <li>Household items, furniture, kitchenware, and accessories.</li>
+                <li>New clothes and baby essentials.</li>
+                <li>Health specialist assistance (Last Saturday of April).</li>
+                <li>Lunch provided for all attendees.</li>
+            </ul>
+        </div>
+        <p class="fw-bold text-primary">God loves you and your family!</p>
+        <h3 class="text-primary">Contact Us</h3>
+        <form action="process.php" method="post" class="p-3 bg-white rounded shadow">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="tel" class="form-label">Phone Number:</label>
+                <input type="tel" id="tel" name="tel" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
         </form>
-
-        <p class="footer-text">📍 Join us at 555 Tallowood Rd, Houston, TX 77024 (Room 108E)</p>
+        <p class="mt-3 text-muted">📍 Join us at 555 Tallowood Rd, Houston, TX 77024 (Room 108E)</p>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
