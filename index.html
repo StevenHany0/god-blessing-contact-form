@@ -64,7 +64,7 @@
         </div>
         <p class="fw-bold text-primary">God loves you and your family!</p>
         <h3 class="text-primary">Contact Us</h3>
-        <form action="process.php" method="post" class="p-3 bg-white rounded shadow">
+        <form id="contactForm" class="p-3 bg-white rounded shadow">
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
@@ -82,5 +82,33 @@
         <p class="mt-3 text-muted">📍 Join us at 555 Tallowood Rd, Houston, TX 77024 (Room 108E)</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("wO6WtA9SyI-i2b-gX"); // Replace with your EmailJS Public Key
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const tel = document.getElementById("tel").value;
+
+            const params = { name, email, tel };
+
+            emailjs.send("service_erejbns", "template_g7ddg3r", params)
+                .then(response => {
+                    alert("✅ Email sent successfully!");
+                    document.getElementById("contactForm").reset();
+                })
+                .catch(error => {
+                    alert("❌ Error sending email. Try again later.");
+                    console.error("EmailJS Error:", error);
+                });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", sendEmail);
+    </script>
 </body>
 </html>
